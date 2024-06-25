@@ -14,13 +14,13 @@ $text = "<strong>Jules</strong>: What does Marcellus look like. <br>
 <strong>Scared Guy</strong>:.. What?<br>
 <strong>Jules</strong>: (points gun) Say what again. SAY WHAT again! And I dare you, I double dare you motherfucker! Say what one more time.";
 
-$characters = strlen($text);
-$censured = ''
+$TextChar = strlen($text);
 $censured_text = str_ireplace(
-    $_GET['censured'],
+    $_POST['censured'],
     '***',
     $text
 );
+$CensuredTextChar = strlen($censured_text);
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +37,11 @@ $censured_text = str_ireplace(
         <p>
             <?php echo $text ?>
         </p>
-        <h3>Number of characters in this text: <?php echo $characters ?></h3>
+        <h3>Number of characters in this text: <?php echo $TextChar ?></h3>
+        <p>
+            <?php echo $censured_text ?>
+        </p>
+        <h3>Number of characters in this text: <?php echo $CensuredTextChar ?></h3>
         <form action='./index.php' method="POST">
             <input type='text' name='censured' id='censured-text' placeholder='Insert a word to be censured!'>
             <button type='submit'>Submit</button>
