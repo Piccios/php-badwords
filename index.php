@@ -16,7 +16,7 @@ $text = "<strong>Jules</strong>: What does Marcellus look like. <br>
 
 $TextChar = strlen($text);
 $censored_text = str_ireplace(
-    $_POST['censured'],
+    $_POST['censored'],
     '***',
     $text
 );
